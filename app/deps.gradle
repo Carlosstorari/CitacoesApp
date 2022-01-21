@@ -1,0 +1,23 @@
+ext {
+    corektxVersion = "1.7.0"
+    appcompatVersion = "1.4.1"
+    materialVersion = "1.5.0"
+    constraintlayoutVersion = "2.1.2"
+
+    junitVersion = "4.+"
+    androixjunitVersion = "1.1.3"
+    espressoCoreVersion = "3.4.0"
+
+    deps = [
+            corektx : "androidx.core:core-ktx:${corektxVersion}",
+            appcompat: "androidx.appcompat:appcompat:${appcompatVersion}",
+            material: "com.google.android.material:material:${materialVersion}",
+            constraintlayout: "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}"
+    ]
+
+    depsTest = [
+            junit : "junit:junit:${junitVersion}",
+            androixjunit : "androidx.test.ext:junit:${androixjunitVersion}",
+            espressoCore : "androidx.test.espresso:espresso-core:${espressoCoreVersion}"
+    ]
+}
