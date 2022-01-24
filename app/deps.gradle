@@ -3,6 +3,8 @@ ext {
     appcompatVersion = "1.4.1"
     materialVersion = "1.5.0"
     constraintlayoutVersion = "2.1.2"
+    recyclerviewVersion = "1.2.1"
+    recyclerviewSelectionVersion = "1.1.0"
 
     junitVersion = "4.+"
     androixjunitVersion = "1.1.3"
@@ -12,7 +14,9 @@ ext {
             corektx : "androidx.core:core-ktx:${corektxVersion}",
             appcompat: "androidx.appcompat:appcompat:${appcompatVersion}",
             material: "com.google.android.material:material:${materialVersion}",
-            constraintlayout: "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}"
+            constraintlayout: "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}",
+            recyclerview: "androidx.recyclerview:recyclerview:${recyclerviewVersion}",
+            recyclerviewSelection: "androidx.recyclerview:recyclerview-selection:${recyclerviewSelectionVersion}"
     ]
 
     depsTest = [

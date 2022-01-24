@@ -30,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -38,6 +41,8 @@ dependencies {
     implementation deps.appcompat
     implementation deps.material
     implementation deps.constraintlayout
+    implementation deps.recyclerview
+    implementation deps.recyclerviewSelection
     testImplementation depsTest.junit
     androidTestImplementation depsTest.androixjunit
     androidTestImplementation depsTest.espressoCore

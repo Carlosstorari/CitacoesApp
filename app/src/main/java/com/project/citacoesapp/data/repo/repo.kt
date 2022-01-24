@@ -1,7 +1,7 @@
-package com.project.citacoesapp.repo
+package com.project.citacoesapp.data.repo
 
-import com.project.citacoesapp.model.Autor
-import com.project.citacoesapp.model.Citacoes
+import com.project.citacoesapp.data.model.Autor
+import com.project.citacoesapp.data.model.Citacoes
 
 val frases = listOf(
     Citacoes(Autor("Bauman" ,"foto"), "A modernidade líquida em que vivemos traz consigo \n" +
