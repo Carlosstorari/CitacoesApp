@@ -1,16 +1,16 @@
 package com.project.citacoesapp.ui
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.project.citacoesapp.R
-import com.project.citacoesapp.data.repo.frases
+import com.project.citacoesapp.data.repo.RepositorioImpl
 import com.project.citacoesapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var viewModel: MainViewModel
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,9 +18,19 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        binding.rvQuotesList.apply {
-            adapter = QuotesAdapter(frases)
-            layoutManager = LinearLayoutManager(context)
-        }
+
+        viewModel = ViewModelProvider(
+            this,
+            MainViewModel.MainViewModelFactory(RepositorioImpl())
+        ).get(MainViewModel::class.java)
+
+        viewModel.frases.observe(this, Observer { citacoes ->
+            binding.rvQuotesList.apply {
+                adapter = QuotesAdapter(citacoes)
+                layoutManager = LinearLayoutManager(context)
+            }
+        })
+
+        viewModel.getFrases()
     }
 }
